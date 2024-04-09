@@ -36,33 +36,34 @@ public class Main {
 		        cardapio.adicionarBebida(new ItemMenu(9,"água", 10.55)); 
 		        
 		        
-		        try (Scanner scanner = new Scanner(System.in)) {
-					System.out.println("Escolha entre Prato (0) e Bebida (1):");
-					int escolhaCategoria = scanner.nextInt();
+		        Scanner scanner = new Scanner(System.in);
 
-     
-					if (escolhaCategoria == 0) {
-					    System.out.println("\n------- Cardápio de Frutos do Mar -------");
-					    exibirItens(cardapio.getPratos());
-					} else if (escolhaCategoria == 1) {
-					    System.out.println("\n------- Cardápio de Bebidas -------");
-					    exibirItens(cardapio.getBebidas());
-					} else {
-					    System.out.println("Escolha inválida!");
-					    return;
-					}
+		    
+		        System.out.println("Escolha entre Prato (0) e Bebida (1):");
+		        int escolhaCategoria = scanner.nextInt();
 
-  
-					System.out.println("Escolha o código do item desejado:");
-					int codigoEscolhido = scanner.nextInt();
+		      
+		        if (escolhaCategoria == 0) {
+		            System.out.println("\n------- Cardápio de Frutos do Mar -------");
+		            exibirItens(cardapio.getPratos());
+		        } else if (escolhaCategoria == 1) {
+		            System.out.println("\n------- Cardápio de Bebidas -------");
+		            exibirItens(cardapio.getBebidas());
+		        } else {
+		            System.out.println("Escolha inválida!");
+		            return;
+		        }
 
-   
-					if (escolhaCategoria == 0) {
-					    System.out.println("Você escolheu: " + nomeDoItem(cardapio.getPratos(), codigoEscolhido));
-					} else if (escolhaCategoria == 1) {
-					    System.out.println("Você escolheu: " + nomeDoItem(cardapio.getBebidas(), codigoEscolhido));
-					}
-				}
+		  
+		        System.out.println("Escolha o código do item desejado:");
+		        int codigoEscolhido = scanner.nextInt();
+
+		   
+		        if (escolhaCategoria == 0) {
+		            System.out.println("Você escolheu: " + nomeDoItem(cardapio.getPratos(), codigoEscolhido));
+		        } else if (escolhaCategoria == 1) {
+		            System.out.println("Você escolheu: " + nomeDoItem(cardapio.getBebidas(), codigoEscolhido));
+		        }
 		    }
 
 		    public static void exibirItens(List<ItemMenu> itens) {
@@ -94,4 +95,5 @@ public class Main {
 		    }
 		}
 	
+
 
