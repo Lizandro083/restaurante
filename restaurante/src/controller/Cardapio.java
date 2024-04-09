@@ -1,21 +1,32 @@
 package controller;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import model.Prato;
+import model.ItemMenu;
+
 public class Cardapio {
-	   private List<Prato> pratos;
+    private List<ItemMenu> pratos;
+    private List<ItemMenu> bebidas;
 
-	    public Cardapio() {
-	        pratos = new ArrayList<>();
-	    }
+    public Cardapio() {
+        pratos = new ArrayList<>();
+        bebidas = new ArrayList<>();
+    }
 
-	    public void adicionarPrato(Prato prato) {
-	        pratos.add(prato);
-	    }
+    public void adicionarPrato(ItemMenu prato) {
+        pratos.add(prato);
+    }
 
-	    public List<Prato> getPratos() {
-	        return pratos;
-	    }
-	}
+    public void adicionarBebida(ItemMenu bebida) {
+        bebidas.add(bebida);
+    }
 
+    public List<ItemMenu> getPratos() {
+        return pratos;
+    }
+
+    public List<ItemMenu> getBebidas() {
+        return bebidas;
+    }
+}
